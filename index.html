@@ -371,11 +371,13 @@
     }
     .hero-right {
       order: 1;
-      min-height: 55vw;
-      max-height: 280px;
+      aspect-ratio: 1 / 1;
+      min-height: unset;
+      max-height: unset;
+      width: 100%;
     }
     .hero-right::after { display: none; }
-    .hero-bull-wrap { width: 65%; max-width: 240px; }
+    .hero-bull-wrap { width: 70%; max-width: unset; padding: 1rem; }
     .hero-corner-tag { display: none; }
     .hero-ghost-num { display: none; }
     .hero-title { font-size: clamp(3rem, 14vw, 4.5rem); }
@@ -429,8 +431,7 @@
   @media (max-width: 480px) {
     .hero-title { font-size: clamp(2.6rem, 15vw, 3.5rem); }
     .section-title { font-size: clamp(2rem, 10vw, 2.8rem); }
-    .hero-right { max-height: 240px; }
-    .hero-bull-wrap { width: 55%; }
+    .hero-bull-wrap { width: 62%; }
     .stat { padding: 1rem 0.5rem; }
     .stat-number { font-size: 1.5rem; }
     .stat-label { font-size: 0.55rem; letter-spacing: 0.12em; }
