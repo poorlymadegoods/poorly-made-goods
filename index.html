@@ -74,7 +74,7 @@
   #products{padding:8rem 5rem;background:var(--bg-secondary);position:relative;overflow:hidden;}
   #products::before{content:'GOODS';position:absolute;top:1rem;right:-1rem;font-family:var(--font-stencil);font-size:14rem;color:rgba(147,149,152,0.022);pointer-events:none;white-space:nowrap;line-height:1;}
   .products-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3.5rem;padding-bottom:2rem;border-bottom:1px solid var(--border);}
-  .products-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;}
+  .products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
   .product-card{background:var(--bg-primary);position:relative;overflow:hidden;cursor:crosshair;transition:transform 0.28s ease;}
   .product-card:hover{transform:translateY(-5px);z-index:2;}
   .product-card:hover .product-overlay{opacity:1;}
@@ -138,6 +138,7 @@
     .hero-left{padding:8rem 2.5rem 5rem 3rem;}
     .hero-ghost-num{font-size:7rem;left:2rem;}
     #products{padding:6rem 3rem;}
+    .products-grid{grid-template-columns:repeat(2,1fr);}
     .products-header{flex-direction:column;align-items:flex-start;gap:1rem;}
     #about{padding:6rem 3rem;gap:3rem;}
     #contact{padding:6rem 3rem;}
@@ -229,7 +230,7 @@
   </div>
   <div class="hero-right">
     <div class="hero-img-wrap">
-      <img src="/images/pmg-closeup.jpg" alt="PMG V-Fold — Leather Detail"/>
+      <img src="/images/vfold-black-front.jpg" alt="PMG V-Fold — Black"/>
     </div>
     <span class="hero-corner-tag">Leather &middot; Chicago &middot; LLC</span>
   </div>
@@ -246,13 +247,15 @@
   </div>
   <div class="products-grid">
 
+    <!-- V-FOLD -->
     <div class="product-card reveal">
       <div class="carousel-wrap">
         <div class="carousel-track" id="vfold-track">
-          <img src="/images/pmg-workshop.jpg" alt="V-Fold — Workshop"/>
-          <img src="/images/pmg-flat.jpg"     alt="V-Fold — Flat"/>
-          <img src="/images/pmg-back.jpg"     alt="V-Fold — Back"/>
-          <img src="/images/pmg-duo.jpg"      alt="V-Fold — Colorways"/>
+          <img src="/images/vfold-black-front.jpg" alt="V-Fold — Black Front"/>
+          <img src="/images/vfold-black-detail.jpg" alt="V-Fold — Detail"/>
+          <img src="/images/vfold-black-workshop.jpg" alt="V-Fold — Workshop"/>
+          <img src="/images/vfold-tan-interior.jpg" alt="V-Fold — Interior"/>
+          <img src="/images/vfold-black-standing.jpg" alt="V-Fold — Standing"/>
         </div>
         <button class="carousel-btn prev" onclick="carouselMove('vfold',-1)">&#8592;</button>
         <button class="carousel-btn next" onclick="carouselMove('vfold', 1)">&#8594;</button>
@@ -261,6 +264,7 @@
           <span style="opacity:0.35;" onclick="carouselGo('vfold',1)"></span>
           <span style="opacity:0.35;" onclick="carouselGo('vfold',2)"></span>
           <span style="opacity:0.35;" onclick="carouselGo('vfold',3)"></span>
+          <span style="opacity:0.35;" onclick="carouselGo('vfold',4)"></span>
         </div>
         <div class="product-overlay"><button>Sold Out</button></div>
       </div>
@@ -275,6 +279,7 @@
       </div>
     </div>
 
+    <!-- STASH -->
     <div class="product-card reveal">
       <div class="product-image">
         <img src="/images/symbol-black.svg" alt="Stash Wallet" style="width:60px;height:60px;opacity:0.2;object-fit:contain;"/>
@@ -288,6 +293,40 @@
           <span class="product-tag" style="color:#b84c23;border-color:rgba(184,76,35,0.4);">Sold Out Online</span>
         </div>
         <p style="font-size:0.62rem;letter-spacing:0.12em;color:var(--mid-gray);margin-top:0.8rem;line-height:1.6;">Limited availability at <em style="color:var(--light-gray);font-style:normal;">Mend Atelier Chicago</em></p>
+      </div>
+    </div>
+
+    <!-- MINI NOTEBOOK COVER -->
+    <div class="product-card reveal">
+      <div class="carousel-wrap">
+        <div class="carousel-track" id="notebook-track">
+          <img src="/images/notebook-cover-teal-closed.jpg" alt="Notebook Cover — Teal Closed"/>
+          <img src="/images/notebook-cover-teal-flat.jpg" alt="Notebook Cover — Teal Flat"/>
+          <img src="/images/notebook-cover-teal-tan-back.jpg" alt="Notebook Cover — Teal &amp; Tan Back"/>
+          <img src="/images/notebook-cover-tan-pencil.jpg" alt="Notebook Cover — Tan with Pencil"/>
+          <img src="/images/notebook-cover-tan-back.jpg" alt="Notebook Cover — Tan Back"/>
+          <img src="/images/notebook-cover-black-open.jpg" alt="Notebook Cover — Black Open"/>
+        </div>
+        <button class="carousel-btn prev" onclick="carouselMove('notebook',-1)">&#8592;</button>
+        <button class="carousel-btn next" onclick="carouselMove('notebook', 1)">&#8594;</button>
+        <div class="carousel-dots" id="notebook-dots">
+          <span style="opacity:1;"    onclick="carouselGo('notebook',0)"></span>
+          <span style="opacity:0.35;" onclick="carouselGo('notebook',1)"></span>
+          <span style="opacity:0.35;" onclick="carouselGo('notebook',2)"></span>
+          <span style="opacity:0.35;" onclick="carouselGo('notebook',3)"></span>
+          <span style="opacity:0.35;" onclick="carouselGo('notebook',4)"></span>
+          <span style="opacity:0.35;" onclick="carouselGo('notebook',5)"></span>
+        </div>
+        <div class="product-overlay"><button>Inquire</button></div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">Mini Notebook Cover</div>
+        <div class="product-desc">Full-grain leather. Fits standard pocket notebooks. Pen loop, card pocket, and a whole lot of character. Custom colors available.</div>
+        <div class="product-footer">
+          <span class="product-price">—</span>
+          <span class="product-tag">Custom Order</span>
+        </div>
+        <p style="font-size:0.62rem;letter-spacing:0.12em;color:var(--mid-gray);margin-top:0.8rem;line-height:1.6;">Email us at <a href="mailto:contact@poorlymadegoods.com" style="color:var(--light-gray);text-decoration:none;border-bottom:1px solid rgba(173,175,177,0.3);">contact@poorlymadegoods.com</a></p>
       </div>
     </div>
 
@@ -309,7 +348,7 @@
   </div>
   <div class="about-right reveal">
     <div class="about-img-box">
-      <img src="/images/pmg-duo.jpg" alt="PMG V-Fold Wallets — Both Colorways"/>
+      <img src="/images/vfold-black-workshop.jpg" alt="PMG Workshop"/>
     </div>
     <div class="about-accent"></div>
   </div>
