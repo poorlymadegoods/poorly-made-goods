@@ -203,6 +203,7 @@
     <li><a href="#products">Products</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="/custom-order.html" style="color:var(--silver);">Custom Order</a></li>
   </ul>
   <button class="nav-toggle" aria-label="Toggle menu" onclick="this.classList.toggle('open');document.getElementById('nav-drawer').classList.toggle('open')">
     <span></span><span></span><span></span>
@@ -214,6 +215,7 @@
   <a href="#products" onclick="closeDrawer()">Products</a>
   <a href="#about"    onclick="closeDrawer()">About</a>
   <a href="#contact"  onclick="closeDrawer()">Contact</a>
+  <a href="/custom-order.html" style="color:var(--silver);">Custom Order</a>
 </div>
 
 <section id="home">
@@ -330,6 +332,13 @@
       </div>
     </div>
 
+  </div>
+  <div style="margin-top:3rem;padding-top:2.5rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+    <div>
+      <p style="font-family:var(--font-stencil);font-size:1.1rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--off-white);">Want something specific?</p>
+      <p style="font-size:0.72rem;color:var(--text-muted);letter-spacing:0.05em;margin-top:0.3rem;">All products are available for custom orders — colors, initials, laser engraving.</p>
+    </div>
+    <a href="/custom-order.html" style="font-family:var(--font-stencil);font-size:0.82rem;letter-spacing:0.18em;text-transform:uppercase;background:var(--silver);color:var(--black);padding:0.95rem 2rem;text-decoration:none;clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px));white-space:nowrap;transition:background 0.2s;" onmouseover="this.style.background='var(--off-white)'" onmouseout="this.style.background='var(--silver)'">Start Custom Order &rarr;</a>
   </div>
 </section>
 
