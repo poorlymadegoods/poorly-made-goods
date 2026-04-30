@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Custom Order — Poorly Made Goods</title>
+<style>
+  @font-face {
+    font-family: 'Hitch Route Stencil';
+    src: url('data:font/woff;base64,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') format('woff'),
+         url('data:font/otf;base64,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AAAAAQACAANhYWx0ABRzYWx0ABpzczAxACAAAAABAAAAAAABAAEAAAABAAIAAwAIABAAGAABAAAAAQEcAAEAAAABABAAAQAAAAEAigACAYYAPgCQAJEAkgCTAJQAlQCWAJcAmACZAFwAXQBeAF8AYABhAGIAYwBkAGUAZgBnAGgAaQBqAGsAbABtAG4AbwBwAHEAcgBzAHQAdQB2AHcAeAB5AHoAewB8AH0AfgB/AIAAgQCCAIMAhACFAIYAhwCIAIkAigCLAIwAjQCOAI8AAgEEAD4AkACRAJIAkwCUAJUAlgCXAJgAmQBcAF0AXgBfAGAAYQBiAGMAZABlAGYAZwBoAGkAagBrAGwAbQBuAG8AcABxAHIAcwB0AHUAdgB3AHgAeQB6AHsAfAB9AH4AfwCAAIEAggCDAIQAhQCGAIcAiACJAIoAiwCMAI0AjgCPAAIAggA+AJAAkQCSAJMAlACVAJYAlwCYAJkAXABdAF4AXwBgAGEAYgBjAGQAZQBmAGcAaABpAGoAawBsAG0AbgBvAHAAcQByAHMAdAB1AHYAdwB4AHkAegB7AHwAfQB+AH8AgACBAIIAgwCEAIUAhgCHAIgAiQCKAIsAjACNAI4AjwACAAMADgAXAAAAHAA1AAoAOgBTACQ=') format('opentype');
+    font-weight: normal; font-style: normal; font-display: block;
+  }
+  :root {
+    --black:#000000; --near-black:#0a0a0a; --charcoal:#232323;
+    --mid-gray:#797b7f; --silver:#939598; --light-gray:#adafb1; --off-white:#d8d9da;
+    --bg-primary:var(--near-black); --bg-secondary:var(--charcoal);
+    --text-primary:var(--off-white); --text-muted:var(--mid-gray);
+    --border:rgba(147,149,152,0.18); --border-active:rgba(147,149,152,0.6);
+    --rust:#b84c23;
+    --font-stencil:'Hitch Route Stencil',cursive;
+    --font-mono:'Courier New',monospace;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg-primary);color:var(--text-primary);font-family:var(--font-mono);font-size:15px;line-height:1.6;min-height:100vh;cursor:crosshair;}
+  body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:1.1rem 3.5rem;background:rgba(0,0,0,0.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);}
+  .nav-brand{display:flex;align-items:center;gap:0.9rem;text-decoration:none;}
+  .nav-bull{width:32px;height:32px;object-fit:contain;}
+  .nav-logo{font-family:var(--font-stencil);font-size:1rem;letter-spacing:0.1em;color:var(--light-gray);text-transform:uppercase;}
+  .nav-back{font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;transition:color 0.2s;display:flex;align-items:center;gap:0.5rem;}
+  .nav-back:hover{color:var(--off-white);}
+
+  .progress-bar{position:fixed;top:63px;left:0;right:0;z-index:100;height:2px;background:rgba(147,149,152,0.1);}
+  .progress-fill{height:100%;background:var(--silver);transition:width 0.4s ease;width:25%;}
+
+  .page-wrap{max-width:720px;margin:0 auto;padding:7rem 2rem 6rem;}
+
+  .step-dots{display:flex;gap:0.5rem;margin-bottom:2rem;}
+  .step-dot{width:6px;height:6px;border-radius:50%;background:var(--border-active);transition:background 0.2s,width 0.2s;}
+  .step-dot.active{background:var(--silver);width:20px;border-radius:3px;}
+  .step-dot.done{background:rgba(147,149,152,0.5);}
+
+  .step-header{margin-bottom:2.5rem;}
+  .step-eyebrow{font-size:0.62rem;letter-spacing:0.36em;text-transform:uppercase;color:var(--mid-gray);margin-bottom:0.8rem;}
+  .step-title{font-family:var(--font-stencil);font-size:clamp(2rem,5vw,3rem);line-height:1;letter-spacing:0.05em;text-transform:uppercase;color:var(--off-white);}
+  .step-sub{font-size:0.78rem;color:var(--text-muted);letter-spacing:0.05em;margin-top:0.8rem;line-height:1.7;}
+
+  .step{display:none;animation:fadeUp 0.4s ease forwards;}
+  .step.active{display:block;}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:none;}}
+
+  /* PRODUCT CARDS */
+  .product-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:1.5rem;}
+  .product-option{background:var(--charcoal);border:2px solid transparent;cursor:crosshair;padding:1.5rem 1rem;text-align:center;transition:border-color 0.2s,background 0.2s;position:relative;}
+  .product-option:hover{border-color:var(--border-active);background:#2a2a2a;}
+  .product-option.selected{border-color:var(--silver);background:#2a2a2a;}
+  .product-option.selected::after{content:'✓';position:absolute;top:0.6rem;right:0.75rem;font-size:0.7rem;color:var(--silver);}
+  .product-icon{font-size:2rem;margin-bottom:0.8rem;display:block;opacity:0.6;}
+  .product-option-name{font-family:var(--font-stencil);font-size:0.88rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--off-white);display:block;margin-bottom:0.4rem;}
+  .product-option-price{font-size:0.65rem;letter-spacing:0.15em;color:var(--mid-gray);}
+
+  /* TANNERY SELECTOR */
+  .tannery-cards{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-bottom:1.8rem;}
+  .tannery-option{background:var(--charcoal);border:2px solid transparent;cursor:crosshair;padding:1.2rem 1rem;transition:border-color 0.2s,background 0.2s;position:relative;}
+  .tannery-option:hover{border-color:var(--border-active);background:#2a2a2a;}
+  .tannery-option.selected{border-color:var(--silver);background:#2a2a2a;}
+  .tannery-option.selected::after{content:'✓';position:absolute;top:0.6rem;right:0.75rem;font-size:0.7rem;color:var(--silver);}
+  .tannery-name{font-family:var(--font-stencil);font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--off-white);display:block;margin-bottom:0.25rem;}
+  .tannery-detail{font-size:0.62rem;letter-spacing:0.08em;color:var(--mid-gray);line-height:1.5;}
+  .tannery-tag{display:inline-block;font-size:0.58rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--rust);border:1px solid rgba(184,76,35,0.35);padding:0.15rem 0.5rem;margin-top:0.4rem;}
+
+  /* COLOR SWATCHES */
+  .color-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:8px;margin-top:0.6rem;}
+  .color-chip{background:var(--charcoal);border:2px solid transparent;cursor:crosshair;padding:0.7rem 0.5rem;text-align:center;transition:border-color 0.2s,background 0.2s;position:relative;}
+  .color-chip:hover{border-color:var(--border-active);}
+  .color-chip.selected{border-color:var(--silver);}
+  .color-chip.selected::after{content:'✓';position:absolute;top:3px;right:5px;font-size:0.6rem;color:var(--silver);}
+  .color-chip.disabled{opacity:0.35;cursor:not-allowed;pointer-events:none;}
+  .chip-dot{width:28px;height:28px;border-radius:50%;margin:0 auto 0.5rem;border:1px solid rgba(147,149,152,0.2);}
+  .chip-name{font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--off-white);line-height:1.3;}
+  .chip-limited{font-size:0.55rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--rust);margin-top:2px;}
+
+  /* FORM FIELDS */
+  .field-group{margin-bottom:1.8rem;}
+  .field-label{font-size:0.62rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--mid-gray);display:block;margin-bottom:0.5rem;}
+  .field-label span{color:var(--rust);margin-left:2px;}
+  .field-select,.field-input,.field-textarea{width:100%;background:rgba(255,255,255,0.03);border:1px solid var(--border);color:var(--off-white);font-family:var(--font-mono);font-size:0.82rem;padding:0.9rem 1rem;outline:none;transition:border-color 0.2s,background 0.2s;cursor:crosshair;appearance:none;-webkit-appearance:none;}
+  .field-select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23797b7f' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.5rem;}
+  .field-select:focus,.field-input:focus,.field-textarea:focus{border-color:var(--silver);background:rgba(147,149,152,0.05);}
+  .field-select option{background:var(--charcoal);color:var(--off-white);}
+  .field-textarea{height:110px;resize:vertical;}
+  .field-hint{font-size:0.62rem;color:var(--mid-gray);letter-spacing:0.08em;margin-top:0.4rem;line-height:1.6;}
+  .field-hint.highlight{color:var(--light-gray);}
+
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;}
+  .form-divider{height:1px;background:var(--border);margin:2rem 0;}
+
+  /* TOGGLE SECTIONS */
+  .toggle-section{border:1px solid var(--border);margin-bottom:1.2rem;overflow:hidden;}
+  .toggle-header{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.2rem;cursor:crosshair;transition:background 0.2s;user-select:none;}
+  .toggle-header:hover{background:rgba(147,149,152,0.05);}
+  .toggle-header.open{background:rgba(147,149,152,0.06);border-bottom:1px solid var(--border);}
+  .toggle-title{font-family:var(--font-stencil);font-size:0.88rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--off-white);display:flex;align-items:center;gap:0.8rem;}
+  .toggle-tag{font-family:var(--font-mono);font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--mid-gray);border:1px solid var(--border);padding:0.15rem 0.5rem;}
+  .toggle-arrow{color:var(--silver);font-size:0.8rem;transition:transform 0.2s;}
+  .toggle-header.open .toggle-arrow{transform:rotate(180deg);}
+  .toggle-body{display:none;padding:1.2rem;}
+  .toggle-body.open{display:block;}
+
+  /* CHAR COUNTER */
+  .char-counter{text-align:right;font-size:0.6rem;color:var(--mid-gray);letter-spacing:0.1em;margin-top:0.3rem;}
+  .char-counter.warn{color:var(--rust);}
+  .field-error{font-size:0.65rem;color:var(--rust);letter-spacing:0.08em;margin-top:0.4rem;}
+
+  /* INFO BOX */
+  .info-box{background:rgba(147,149,152,0.06);border:1px solid var(--border);padding:1rem 1.2rem;margin-bottom:1.5rem;}
+  .info-box p{font-size:0.72rem;color:var(--text-muted);letter-spacing:0.05em;line-height:1.7;}
+  .info-box strong{color:var(--light-gray);}
+
+  /* DEPOSIT NOTICE */
+  .deposit-notice{background:rgba(184,76,35,0.06);border:1px solid rgba(184,76,35,0.25);padding:1.2rem 1.4rem;margin:2rem 0;}
+  .deposit-notice-title{font-family:var(--font-stencil);font-size:0.82rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--rust);margin-bottom:0.5rem;}
+  .deposit-notice p{font-size:0.72rem;color:var(--text-muted);letter-spacing:0.05em;line-height:1.7;}
+  .deposit-notice strong{color:var(--light-gray);}
+
+  /* REVIEW */
+  .review-block{background:var(--charcoal);border:1px solid var(--border);padding:1.5rem;margin-bottom:2rem;}
+  .review-title{font-family:var(--font-stencil);font-size:0.88rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--silver);margin-bottom:1rem;}
+  .review-row{display:flex;justify-content:space-between;align-items:flex-start;padding:0.5rem 0;border-bottom:1px solid var(--border);font-size:0.75rem;gap:1rem;}
+  .review-row:last-child{border-bottom:none;}
+  .review-key{color:var(--mid-gray);letter-spacing:0.1em;text-transform:uppercase;font-size:0.62rem;flex-shrink:0;}
+  .review-val{color:var(--off-white);text-align:right;}
+  .review-none{color:rgba(147,149,152,0.35);font-style:italic;}
+
+  /* BUTTONS */
+  .btn-row{display:flex;gap:1rem;margin-top:2.5rem;}
+  .btn-next{font-family:var(--font-stencil);font-size:0.82rem;letter-spacing:0.18em;text-transform:uppercase;background:var(--silver);color:var(--black);padding:1rem 2.5rem;border:none;cursor:crosshair;transition:background 0.2s,transform 0.15s;clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px));}
+  .btn-next:hover{background:var(--off-white);transform:translateY(-2px);}
+  .btn-next:disabled{opacity:0.35;cursor:not-allowed;transform:none;background:var(--silver);}
+  .btn-back{font-family:var(--font-stencil);font-size:0.82rem;letter-spacing:0.18em;text-transform:uppercase;border:1px solid var(--border);color:var(--silver);padding:1rem 2rem;background:none;cursor:crosshair;transition:border-color 0.2s,color 0.2s;}
+  .btn-back:hover{border-color:var(--silver);color:var(--off-white);}
+
+  /* SUCCESS */
+  .success-screen{display:none;text-align:center;padding:4rem 2rem;}
+  .success-screen.active{display:block;animation:fadeUp 0.5s ease forwards;}
+  .success-icon{font-size:3rem;margin-bottom:1.5rem;}
+  .success-title{font-family:var(--font-stencil);font-size:2.5rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--off-white);margin-bottom:1rem;}
+  .success-msg{font-size:0.82rem;color:var(--text-muted);line-height:1.8;max-width:440px;margin:0 auto 2rem;}
+
+  @media(max-width:600px){
+    nav{padding:1rem 1.5rem;}
+    .page-wrap{padding:6rem 1.2rem 4rem;}
+    .product-cards{grid-template-columns:1fr;gap:2px;}
+    .tannery-cards{grid-template-columns:1fr;}
+    .two-col{grid-template-columns:1fr;}
+    .color-grid{grid-template-columns:repeat(3,1fr);}
+    .btn-row{flex-direction:column;}
+    .btn-next,.btn-back{width:100%;text-align:center;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/index.html" class="nav-brand">
+    <img class="nav-bull" src="/images/symbol.png" alt="PMG"/>
+    <span class="nav-logo">Poorly Made Goods</span>
+  </a>
+  <a href="/index.html" class="nav-back">&#8592; Back to Site</a>
+</nav>
+
+<div class="progress-bar"><div class="progress-fill" id="progress"></div></div>
+
+<div class="page-wrap">
+
+  <div class="step-dots">
+    <div class="step-dot active" id="dot-1"></div>
+    <div class="step-dot" id="dot-2"></div>
+    <div class="step-dot" id="dot-3"></div>
+    <div class="step-dot" id="dot-4"></div>
+  </div>
+
+  <!-- ── STEP 1: PRODUCT ──────────────────────── -->
+  <div class="step active" id="step-1">
+    <div class="step-header">
+      <p class="step-eyebrow">Step 1 of 4 &mdash; Choose Your Product</p>
+      <h1 class="step-title">What are<br>we making?</h1>
+      <p class="step-sub">Select the item you'd like to customize. Each is made to order from full-grain leather.</p>
+    </div>
+
+    <div class="product-cards">
+      <div class="product-option" onclick="selectProduct(this,'V-Fold','Starting at $130')">
+        <span class="product-icon">🟫</span>
+        <span class="product-option-name">V-Fold</span>
+        <span class="product-option-price">Starting at $130</span>
+      </div>
+      <div class="product-option" onclick="selectProduct(this,'Stash','Starting at $110')">
+        <span class="product-icon">🟫</span>
+        <span class="product-option-name">Stash</span>
+        <span class="product-option-price">Starting at $110</span>
+      </div>
+      <div class="product-option" onclick="selectProduct(this,'Mini Notebook Cover','Custom pricing')">
+        <span class="product-icon">📓</span>
+        <span class="product-option-name">Notebook Cover</span>
+        <span class="product-option-price">Custom pricing</span>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn-next" id="btn-next-1" onclick="goToStep(2)" disabled>Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- ── STEP 2: LEATHER & THREAD ─────────────── -->
+  <div class="step" id="step-2">
+    <div class="step-header">
+      <p class="step-eyebrow">Step 2 of 4 &mdash; Materials</p>
+      <h2 class="step-title">Leather &amp;<br>Thread</h2>
+      <p class="step-sub">Choose your tannery, leather color, and thread. All hides are full-grain veg tan — they'll age and patina with use.</p>
+    </div>
+
+    <!-- Tannery selection -->
+    <div class="field-group">
+      <label class="field-label">Tannery <span>*</span></label>
+      <div class="tannery-cards">
+        <div class="tannery-option" onclick="selectTannery(this,'Badalassi Carlo','Pueblo Veg Tan')">
+          <span class="tannery-name">Badalassi Carlo</span>
+          <span class="tannery-detail">Pueblo Veg Tan &mdash; Italy<br>Pull-up leather with a rich, waxy finish. Develops a deep patina over time.</span>
+        </div>
+        <div class="tannery-option" onclick="selectTannery(this,'Conceria Walpier','Buttero Veg Tan')">
+          <span class="tannery-name">Conceria Walpier</span>
+          <span class="tannery-detail">Buttero Veg Tan &mdash; Italy<br>Firm, tight grain. Clean edges. Colors are limited &mdash; act fast.</span>
+          <span class="tannery-tag">Limited Colors</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dynamic color selection -->
+    <div class="field-group" id="color-section" style="display:none;">
+      <label class="field-label">Outside Shell Color <span>*</span></label>
+      <p style="font-size:0.62rem;color:var(--mid-gray);letter-spacing:0.08em;line-height:1.5;margin-bottom:0.6rem;">This is the exterior leather — the first thing people see.</p>
+      <div class="color-grid" id="color-grid"></div>
+    </div>
+
+    <!-- Thread selection -->
+    <div class="field-group" id="thread-section" style="display:none;">
+      <label class="field-label">Thread Color <span>*</span></label>
+      <div class="color-grid" id="thread-grid">
+        <div class="color-chip" onclick="selectThread(this,'Black')">
+          <div class="chip-dot" style="background:#1a1a1a;"></div>
+          <div class="chip-name">Black</div>
+        </div>
+        <div class="color-chip" onclick="selectThread(this,'White')">
+          <div class="chip-dot" style="background:#e8e8e8;border-color:rgba(147,149,152,0.4);"></div>
+          <div class="chip-name">White</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- V-Fold only: Internal Pocket -->
+    <div class="field-group" id="internal-pocket-section" style="display:none;">
+      <label class="field-label">Internal Pocket Color <span>*</span></label>
+      <p style="font-size:0.62rem;color:var(--mid-gray);letter-spacing:0.08em;line-height:1.5;margin-bottom:0.6rem;">The pocket panels on the inside of the wallet. Can match or contrast the shell.</p>
+      <div class="color-grid" id="internal-pocket-grid"></div>
+    </div>
+
+    <!-- V-Fold only: Pocket Divider -->
+    <div class="field-group" id="pocket-divider-section" style="display:none;">
+      <label class="field-label">Pocket Divider Color <span>*</span></label>
+      <p style="font-size:0.62rem;color:var(--mid-gray);letter-spacing:0.08em;line-height:1.5;margin-bottom:0.6rem;">The center divider strip that runs between the two pockets.</p>
+      <div class="color-grid" id="pocket-divider-grid"></div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn-back" onclick="goToStep(1)">&#8592; Back</button>
+      <button class="btn-next" id="btn-next-2" onclick="goToStep(3)" disabled>Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- ── STEP 3: PERSONALIZATION ───────────────── -->
+  <div class="step" id="step-3">
+    <div class="step-header">
+      <p class="step-eyebrow">Step 3 of 4 &mdash; Personalization</p>
+      <h2 class="step-title">Make it<br>yours.</h2>
+      <p class="step-sub">All personalization is optional. Open any section below to add it to your order.</p>
+    </div>
+
+    <!-- Heat Pressed Initials -->
+    <div class="toggle-section">
+      <div class="toggle-header" id="toggle-initials" onclick="toggleSection('initials')">
+        <div class="toggle-title">
+          Heat Pressed Initials
+          <span class="toggle-tag">Optional</span>
+        </div>
+        <span class="toggle-arrow">&#9660;</span>
+      </div>
+      <div class="toggle-body" id="body-initials">
+        <div class="info-box" style="margin-bottom:1rem;">
+          <p>Initials are permanently pressed into the leather using heat. Subtle and clean &mdash; exactly like the ones in our photos. Format example: <strong>M.L.V</strong></p>
+        </div>
+        <div class="field-group" style="margin-bottom:0;">
+          <label class="field-label">Your Initials</label>
+          <input class="field-input" type="text" id="initials" maxlength="5" placeholder="e.g. M.L.V" oninput="updateOrder('initials', this.value); updateCharCount('initials',5)"/>
+          <div class="char-counter" id="counter-initials">0 / 5</div>
+          <p class="field-hint">Up to 5 characters — three letters and two periods (e.g. M.L.V). Periods and dots count toward the limit.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Laser Engraved Text -->
+    <div class="toggle-section">
+      <div class="toggle-header" id="toggle-laser-text" onclick="toggleSection('laser-text')">
+        <div class="toggle-title">
+          Laser Engraved Text
+          <span class="toggle-tag">Optional</span>
+        </div>
+        <span class="toggle-arrow">&#9660;</span>
+      </div>
+      <div class="toggle-body" id="body-laser-text">
+        <div class="info-box" style="margin-bottom:1rem;">
+          <p>Text is laser engraved directly into the leather. <strong>Maximum engraving area: 6 &times; 6 cm.</strong> We'll confirm the final layout before starting.</p>
+        </div>
+        <div class="field-group">
+          <label class="field-label">Text to Engrave</label>
+          <input class="field-input" type="text" id="laser-text" maxlength="40" placeholder="e.g. One piece at a time." oninput="updateOrder('laserText', this.value); updateCharCount('laser-text',40)"/>
+          <div class="char-counter" id="counter-laser-text">0 / 40</div>
+        </div>
+        <div class="field-group" style="margin-bottom:0;">
+          <label class="field-label">Placement Preference</label>
+          <select class="field-select" id="laser-text-placement" onchange="updateOrder('laserTextPlacement', this.value); clearError('err-laser-text-placement')">
+            <option value="">— Where should it go? —</option>
+            <option value="Front exterior">Front exterior</option>
+            <option value="Interior">Interior</option>
+            <option value="Back exterior">Back exterior</option>
+            <option value="No preference">No preference — your call</option>
+          </select>
+          <p class="field-error" id="err-laser-text-placement" style="display:none;">Please select a placement for your engraved text.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Laser Engraved Image -->
+    <div class="toggle-section">
+      <div class="toggle-header" id="toggle-laser-image" onclick="toggleSection('laser-image')">
+        <div class="toggle-title">
+          Laser Engraved Image
+          <span class="toggle-tag">Optional</span>
+        </div>
+        <span class="toggle-arrow">&#9660;</span>
+      </div>
+      <div class="toggle-body" id="body-laser-image">
+        <div class="info-box" style="margin-bottom:1rem;">
+          <p>Images are laser engraved into the leather. <strong>Maximum engraving area: 6 &times; 6 cm.</strong> Simple, high-contrast designs work best &mdash; logos, monograms, illustrations. We'll confirm feasibility and layout before starting.</p>
+          <p style="margin-top:0.6rem;">After submitting your order, email your reference image to <strong>contact@poorlymadegoods.com</strong> using your order reference number as the subject line.</p>
+        </div>
+        <div class="field-group">
+          <label class="field-label">Describe Your Image</label>
+          <textarea class="field-textarea" id="laser-image-desc" maxlength="300" placeholder="Describe the image or design you'd like engraved. If you have a reference image, mention it here and send it to contact@poorlymadegoods.com" oninput="updateOrder('laserImageDesc', this.value); updateCharCount('laser-image-desc',300)"></textarea>
+          <div class="char-counter" id="counter-laser-image-desc">0 / 300</div>
+        </div>
+        <div class="field-group" style="margin-bottom:0;">
+          <label class="field-label">Placement Preference</label>
+          <select class="field-select" id="laser-image-placement" onchange="updateOrder('laserImagePlacement', this.value); clearError('err-laser-image-placement')">
+            <option value="">— Where should it go? —</option>
+            <option value="Front exterior">Front exterior</option>
+            <option value="Interior">Interior</option>
+            <option value="Back exterior">Back exterior</option>
+            <option value="No preference">No preference — your call</option>
+          </select>
+          <p class="field-error" id="err-laser-image-placement" style="display:none;">Please select a placement for your engraved image.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn-back" onclick="goToStep(2)">&#8592; Back</button>
+      <button class="btn-next" onclick="validateStep3()">Review Order &rarr;</button>
+    </div>
+  </div>
+
+  <!-- ── STEP 4: REVIEW & SUBMIT ───────────────── -->
+  <div class="step" id="step-4">
+    <div class="step-header">
+      <p class="step-eyebrow">Step 4 of 4 &mdash; Review &amp; Submit</p>
+      <h2 class="step-title">Almost<br>there.</h2>
+      <p class="step-sub">Review your selections below then add your contact info. We'll be in touch within a couple of days.</p>
+    </div>
+
+    <div class="review-block" id="review-block"></div>
+
+    <div class="form-divider"></div>
+
+    <form name="custom-order" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onsubmit="handleSubmit(event)">
+      <input type="hidden" name="form-name" value="custom-order"/>
+      <p style="display:none;"><input name="bot-field"/></p>
+      <input type="hidden" name="product"                   id="f-product"/>
+      <input type="hidden" name="tannery"                   id="f-tannery"/>
+      <input type="hidden" name="leather_color"             id="f-leather"/>
+      <input type="hidden" name="thread_color"              id="f-thread"/>
+      <input type="hidden" name="initials"                  id="f-initials"/>
+      <input type="hidden" name="laser_text"                id="f-laser-text"/>
+      <input type="hidden" name="laser_text_placement"      id="f-laser-text-placement"/>
+      <input type="hidden" name="laser_image_description"   id="f-laser-image"/>
+      <input type="hidden" name="laser_image_placement"     id="f-laser-image-placement"/>
+      <input type="hidden" name="order_reference"             id="f-order-ref"/>
+      <input type="hidden" name="internal_pocket_color"        id="f-internal-pocket"/>
+      <input type="hidden" name="pocket_divider_color"          id="f-pocket-divider"/>
+
+      <div class="two-col">
+        <div class="field-group">
+          <label class="field-label">First Name <span>*</span></label>
+          <input class="field-input" type="text" name="first_name" placeholder="Marco" required/>
+        </div>
+        <div class="field-group">
+          <label class="field-label">Last Name <span>*</span></label>
+          <input class="field-input" type="text" name="last_name" placeholder="Villalba" required/>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label">Email Address <span>*</span></label>
+        <input class="field-input" type="email" name="email" placeholder="you@email.com" required/>
+        <p class="field-hint">We'll use this to confirm your order. No spam, ever.</p>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label">Additional Notes</label>
+        <textarea class="field-textarea" name="notes" placeholder="Timeline requests, special details, questions..."></textarea>
+      </div>
+
+      <!-- Deposit Notice -->
+      <div class="deposit-notice">
+        <div class="deposit-notice-title">&#9888;&nbsp; Deposit Required</div>
+        <p>Once your order is reviewed and accepted, a <strong>$50 deposit</strong> will be requested before work begins. You'll receive an email with payment instructions. The deposit is applied toward your final balance.</p>
+      </div>
+
+      <div class="btn-row">
+        <button type="button" class="btn-back" onclick="goToStep(3)">&#8592; Back</button>
+        <button type="submit" class="btn-next">Submit Order &rarr;</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- SUCCESS -->
+  <div class="success-screen" id="success">
+    <div class="success-icon">🐂</div>
+    <h2 class="success-title">Order Received.</h2>
+    <div style="background:var(--charcoal);border:1px solid var(--border);padding:1.2rem 1.8rem;margin:1.5rem auto;max-width:360px;text-align:center;">
+      <p style="font-size:0.62rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--mid-gray);margin-bottom:0.5rem;">Your Order Reference</p>
+      <p style="font-family:var(--font-stencil);font-size:1.8rem;letter-spacing:0.12em;color:var(--off-white);" id="success-ref-display">—</p>
+      <p style="font-size:0.62rem;letter-spacing:0.1em;color:var(--mid-gray);margin-top:0.4rem;">Save this number</p>
+    </div>
+    <p class="success-msg">
+      We'll review your order and be in touch within a couple of days.<br><br>
+      <strong style="color:var(--light-gray);">If you requested a laser engraved image</strong>, email your reference file to <strong style="color:var(--light-gray);">contact@poorlymadegoods.com</strong> with your order reference number as the subject line.<br><br>
+      If accepted, a <strong style="color:var(--light-gray);">$50 deposit</strong> will be requested via email before work begins. It goes toward your final balance.<br><br>
+      Appreciate the support.
+    </p>
+    <a href="/index.html" style="font-family:var(--font-stencil);font-size:0.82rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--silver);text-decoration:none;border-bottom:1px solid rgba(147,149,152,0.3);padding-bottom:0.2rem;">Back to PMG &rarr;</a>
+  </div>
+
+</div>
+
+<script>
+  const order = {
+    product:'', productPrice:'',
+    tannery:'', tanneryLeather:'',
+    leatherColor:'', threadColor:'',
+    initials:'', laserText:'', laserTextPlacement:'',
+    laserImageDesc:'', laserImagePlacement:''
+  };
+
+  // Leather colors by tannery
+  const leatherColors = {
+    'Badalassi Carlo': [
+      { name:'Black',       hex:'#1a1a1a', limited:false },
+      { name:'Turquoise',   hex:'#2a8b8b', limited:false },
+      { name:'Navy Blue',   hex:'#1a2a4a', limited:false },
+      { name:'Yellow',      hex:'#d4a017', limited:false },
+    ],
+    'Conceria Walpier': [
+      { name:'Black',  hex:'#1a1a1a', limited:true },
+      { name:'Olive',  hex:'#556b2f', limited:true },
+    ]
+  };
+
+  let currentStep = 1;
+
+  function goToStep(n) {
+    document.getElementById('step-' + currentStep).classList.remove('active');
+    document.getElementById('dot-' + currentStep).classList.remove('active');
+    document.getElementById('dot-' + currentStep).classList.add('done');
+    currentStep = n;
+    document.getElementById('step-' + n).classList.add('active');
+    document.getElementById('dot-' + n).classList.add('active');
+    document.getElementById('dot-' + n).classList.remove('done');
+    document.getElementById('progress').style.width = ((n/4)*100) + '%';
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+
+  function selectProduct(el, name, price) {
+    document.querySelectorAll('.product-option').forEach(o => o.classList.remove('selected'));
+    el.classList.add('selected');
+    order.product = name;
+    order.productPrice = price;
+    order.internalPocketColor = '';
+    order.pocketDividerColor  = '';
+    document.getElementById('btn-next-1').disabled = false;
+  }
+
+  function selectTannery(el, tannery, leather) {
+    document.querySelectorAll('.tannery-option').forEach(o => o.classList.remove('selected'));
+    el.classList.add('selected');
+    order.tannery = tannery;
+    order.tanneryLeather = leather;
+    order.leatherColor = '';
+    order.threadColor  = '';
+    order.internalPocketColor = '';
+    order.pocketDividerColor  = '';
+    document.getElementById('btn-next-2').disabled = true;
+
+    // Hide V-Fold sections until colors chosen
+    document.getElementById('internal-pocket-section').style.display = 'none';
+    document.getElementById('pocket-divider-section').style.display  = 'none';
+
+    // Build color chips
+    const colors = leatherColors[tannery] || [];
+    const grid = document.getElementById('color-grid');
+    grid.innerHTML = colors.map(c => `
+      <div class="color-chip${c.limited ? '' : ''}" onclick="selectLeatherColor(this,'${c.name}')">
+        <div class="chip-dot" style="background:${c.hex};${c.name==='Yellow'?'border-color:rgba(212,160,23,0.5);':''}"></div>
+        <div class="chip-name">${c.name}</div>
+        ${c.limited ? '<div class="chip-limited">Limited</div>' : ''}
+      </div>
+    `).join('');
+
+    document.getElementById('color-section').style.display = 'block';
+    document.getElementById('thread-section').style.display = 'none';
+
+    // Reset thread chips
+    document.querySelectorAll('#thread-grid .color-chip').forEach(c => c.classList.remove('selected'));
+  }
+
+  function selectLeatherColor(el, name) {
+    document.querySelectorAll('#color-grid .color-chip').forEach(c => c.classList.remove('selected'));
+    el.classList.add('selected');
+    order.leatherColor = name;
+    document.getElementById('thread-section').style.display = 'block';
+
+    // Show V-Fold internal sections using Badalassi Carlo colors
+    if (order.product === 'V-Fold') {
+      const vfoldColors = leatherColors['Badalassi Carlo'];
+      buildColorGrid('internal-pocket-grid', vfoldColors, 'internalPocket');
+      buildColorGrid('pocket-divider-grid',  vfoldColors, 'pocketDivider');
+      document.getElementById('internal-pocket-section').style.display = 'block';
+      document.getElementById('pocket-divider-section').style.display  = 'block';
+    }
+    checkStep2();
+  }
+
+  function buildColorGrid(gridId, colors, field) {
+    const grid = document.getElementById(gridId);
+    grid.innerHTML = colors.map(c => `
+      <div class="color-chip" onclick="selectPartColor(this,'${field}','${c.name}')">
+        <div class="chip-dot" style="background:${c.hex};"></div>
+        <div class="chip-name">${c.name}</div>
+      </div>
+    `).join('');
+  }
+
+  function selectPartColor(el, field, name) {
+    const gridId = field === 'internalPocket' ? 'internal-pocket-grid' : 'pocket-divider-grid';
+    document.querySelectorAll('#' + gridId + ' .color-chip').forEach(c => c.classList.remove('selected'));
+    el.classList.add('selected');
+    if (field === 'internalPocket') order.internalPocketColor = name;
+    if (field === 'pocketDivider')  order.pocketDividerColor  = name;
+    checkStep2();
+  }
+
+  function selectThread(el, name) {
+    document.querySelectorAll('#thread-grid .color-chip').forEach(c => c.classList.remove('selected'));
+    el.classList.add('selected');
+    order.threadColor = name;
+    checkStep2();
+  }
+
+  function checkStep2() {
+    const baseOk = order.leatherColor && order.threadColor;
+    const vfoldOk = order.product !== 'V-Fold' || (order.internalPocketColor && order.pocketDividerColor);
+    document.getElementById('btn-next-2').disabled = !(baseOk && vfoldOk);
+  }
+
+  function toggleSection(id) {
+    const header = document.getElementById('toggle-' + id);
+    const body   = document.getElementById('body-' + id);
+    header.classList.toggle('open');
+    body.classList.toggle('open');
+  }
+
+  function validateStep3() {
+    let valid = true;
+
+    // If laser text entered, placement required
+    const laserText = document.getElementById('laser-text').value.trim();
+    const laserTextPlacement = document.getElementById('laser-text-placement').value;
+    if (laserText && !laserTextPlacement) {
+      showError('err-laser-text-placement');
+      // Open the section if it's closed
+      const body = document.getElementById('body-laser-text');
+      const header = document.getElementById('toggle-laser-text');
+      if (!body.classList.contains('open')) {
+        body.classList.add('open');
+        header.classList.add('open');
+      }
+      document.getElementById('laser-text-placement').scrollIntoView({behavior:'smooth', block:'center'});
+      valid = false;
+    }
+
+    // If laser image described, placement required
+    const laserImageDesc = document.getElementById('laser-image-desc').value.trim();
+    const laserImagePlacement = document.getElementById('laser-image-placement').value;
+    if (laserImageDesc && !laserImagePlacement) {
+      showError('err-laser-image-placement');
+      const body = document.getElementById('body-laser-image');
+      const header = document.getElementById('toggle-laser-image');
+      if (!body.classList.contains('open')) {
+        body.classList.add('open');
+        header.classList.add('open');
+      }
+      if (valid) document.getElementById('laser-image-placement').scrollIntoView({behavior:'smooth', block:'center'});
+      valid = false;
+    }
+
+    if (valid) {
+      buildReview();
+      goToStep(4);
+    }
+  }
+
+  function showError(id) {
+    const el = document.getElementById(id);
+    if (el) el.style.display = 'block';
+  }
+
+  function clearError(id) {
+    const el = document.getElementById(id);
+    if (el) el.style.display = 'none';
+  }
+
+  function updateOrder(key, val) {
+    order[key] = val;
+  }
+
+  function updateCharCount(id, max) {
+    const el = document.getElementById(id);
+    const counter = document.getElementById('counter-' + id);
+    if (!el || !counter) return;
+    const len = el.value.length;
+    counter.textContent = len + ' / ' + max;
+    counter.classList.toggle('warn', len > max * 0.85);
+  }
+
+  function generateRef() {
+    // Timestamp in base-36 (always increases, millisecond precision)
+    // + 3 random base-36 chars for extra safety = effectively zero collision chance
+    const ts   = Date.now().toString(36).toUpperCase();
+    const rand = Math.random().toString(36).substring(2, 5).toUpperCase();
+    return 'PMG-' + ts + '-' + rand;
+  }
+
+  function buildReview() {
+    if (!order.reference) order.reference = generateRef();
+    document.getElementById('f-product').value              = order.product + ' — ' + order.productPrice;
+    document.getElementById('f-tannery').value              = order.tannery + ' (' + order.tanneryLeather + ')';
+    document.getElementById('f-leather').value              = order.leatherColor;
+    document.getElementById('f-thread').value               = order.threadColor;
+    document.getElementById('f-initials').value             = order.initials || '';
+    document.getElementById('f-laser-text').value           = order.laserText || '';
+    document.getElementById('f-laser-text-placement').value = order.laserTextPlacement || '';
+    document.getElementById('f-laser-image').value          = order.laserImageDesc || '';
+    document.getElementById('f-laser-image-placement').value= order.laserImagePlacement || '';
+    document.getElementById('f-order-ref').value             = order.reference;
+    document.getElementById('f-internal-pocket').value       = order.internalPocketColor || '';
+    document.getElementById('f-pocket-divider').value        = order.pocketDividerColor  || '';
+
+    const none = '<span class="review-none">None</span>';
+    const rows = [
+      ['Reference',     order.reference],
+      ['Product',       order.product + ' &mdash; ' + order.productPrice],
+      ['Tannery',       order.tannery + ' &mdash; ' + order.tanneryLeather],
+      ['Leather Color', order.leatherColor  || none],
+      ['Thread Color',  order.threadColor   || none],
+      ...(order.product === 'V-Fold' ? [
+        ['Internal Pocket', order.internalPocketColor || none],
+        ['Pocket Divider',  order.pocketDividerColor  || none],
+      ] : []),
+      ['Initials',      order.initials      || none],
+      ['Laser Text',    order.laserText ? order.laserText + (order.laserTextPlacement ? ' <span style="color:var(--mid-gray);font-size:0.65rem;">(' + order.laserTextPlacement + ')</span>' : '') : none],
+      ['Laser Image',   order.laserImageDesc ? order.laserImageDesc.substring(0,60) + (order.laserImageDesc.length > 60 ? '...' : '') + (order.laserImagePlacement ? ' <span style="color:var(--mid-gray);font-size:0.65rem;">(' + order.laserImagePlacement + ')</span>' : '') : none],
+    ];
+
+    document.getElementById('review-block').innerHTML =
+      '<div class="review-title">Order Summary</div>' +
+      rows.map(r => '<div class="review-row"><span class="review-key">' + r[0] + '</span><span class="review-val">' + r[1] + '</span></div>').join('');
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const data = new FormData(e.target);
+    fetch('/', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      body: new URLSearchParams(data).toString()
+    })
+    .then(() => showSuccess())
+    .catch(() => showSuccess());
+  }
+
+  function showSuccess() {
+    document.getElementById('success-ref-display').textContent = order.reference || '—';
+    document.getElementById('step-4').classList.remove('active');
+    document.getElementById('success').classList.add('active');
+    document.getElementById('progress').style.width = '100%';
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+</script>
+</body>
+</html>
