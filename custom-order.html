@@ -709,14 +709,15 @@
 
   function handleSubmit(e) {
     e.preventDefault();
+    // Show success immediately — don't make customer wait for email
+    showSuccess();
+    // Send email in background
     const data = new FormData(e.target);
     fetch('/webhook', {
       method: 'POST',
       headers: {'Content-Type': 'application/x-www-form-urlencoded'},
       body: new URLSearchParams(data).toString()
-    })
-    .then(() => showSuccess())
-    .catch(() => showSuccess());
+    }).catch(err => console.error('Webhook error:', err));
   }
 
   function showSuccess() {
