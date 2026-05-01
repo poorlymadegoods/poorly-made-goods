@@ -198,27 +198,6 @@
 <body>
 
 
-<!-- Netlify form detection — do not remove -->
-<form name="custom-order" netlify netlify-honeypot="bot-field" hidden>
-  <input type="hidden" name="form-name" value="custom-order"/>
-  <input name="bot-field"/>
-  <input name="product"/>
-  <input name="tannery"/>
-  <input name="leather_color"/>
-  <input name="thread_color"/>
-  <input name="internal_pocket_color"/>
-  <input name="pocket_divider_color"/>
-  <input name="initials"/>
-  <input name="laser_text"/>
-  <input name="laser_text_placement"/>
-  <input name="laser_image_description"/>
-  <input name="laser_image_placement"/>
-  <input name="order_reference"/>
-  <input name="first_name"/>
-  <input name="last_name"/>
-  <input name="email"/>
-  <input name="notes"/>
-</form>
 
 <nav>
   <a href="#home" class="nav-brand">
@@ -259,7 +238,7 @@
   </div>
   <div class="hero-right">
     <div class="hero-img-wrap">
-      <img src="/images/vfold-black-front.jpg" alt="PMG V-Fold — Black"/>
+      <img src="/images/pmg-mend-atelier.jpg" alt="Poorly Made Goods at Mend Atelier Chicago"/>
     </div>
     <span class="hero-corner-tag">Leather &middot; Chicago &middot; LLC</span>
   </div>
@@ -309,7 +288,7 @@
         <div class="product-name">V-Fold</div>
         <div class="product-desc">Full-grain leather. 4 pockets (8 cards), 2 cash pockets &mdash; bills folded in half, perfect for insurance cards and extras.</div>
         <div class="product-footer">
-          <span class="product-price">$130</span>
+          <span class="product-price">$125</span>
           <span class="product-tag" style="color:#b84c23;border-color:rgba(184,76,35,0.4);">Sold Out Online</span>
         </div>
         <p style="font-size:0.62rem;letter-spacing:0.12em;color:var(--mid-gray);margin-top:0.8rem;line-height:1.6;">Limited availability at <a href="https://maps.app.goo.gl/p2BiJT6otmqf86xi9" target="_blank" rel="noopener" style="color:var(--light-gray);text-decoration:none;border-bottom:1px solid rgba(173,175,177,0.3);transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--light-gray)'" onmouseout="this.style.borderColor='rgba(173,175,177,0.3)'">Mend Atelier Chicago</a></p>
@@ -404,7 +383,31 @@
     <p class="section-label">// 003 &mdash; Get In Touch</p>
     <h2 class="section-title">Say Hello</h2>
     <p style="font-family:var(--font-mono);font-size:0.88rem;color:var(--text-muted);letter-spacing:0.06em;line-height:1.9;max-width:480px;margin-top:0.8rem;">Shoot us an email. We'll reply between batches.</p>
-    <a href="mailto:contact@poorlymadegoods.com" style="display:inline-block;margin-top:1.5rem;font-family:var(--font-stencil);font-size:1rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--silver);text-decoration:none;border-bottom:1px solid rgba(147,149,152,0.3);padding-bottom:0.25rem;transition:color 0.2s,border-color 0.2s;" onmouseover="this.style.color='var(--off-white)';this.style.borderColor='var(--silver)'" onmouseout="this.style.color='var(--silver)';this.style.borderColor='rgba(147,149,152,0.3)'">contact@poorlymadegoods.com</a>
+
+    <form id="contact-form" style="margin-top:2rem;display:grid;gap:1.2rem;max-width:600px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;">
+        <div style="display:flex;flex-direction:column;gap:0.4rem;">
+          <label style="font-size:0.6rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--mid-gray);">Name <span style="color:var(--rust);">*</span></label>
+          <input id="cf-name" type="text" placeholder="Your name" required style="background:rgba(255,255,255,0.03);border:1px solid var(--border);color:var(--off-white);font-family:var(--font-mono);font-size:0.82rem;padding:0.9rem 1rem;outline:none;transition:border-color 0.2s;cursor:crosshair;" onfocus="this.style.borderColor='var(--silver)'" onblur="this.style.borderColor='rgba(147,149,152,0.18)'"/>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:0.4rem;">
+          <label style="font-size:0.6rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--mid-gray);">Email <span style="color:var(--rust);">*</span></label>
+          <input id="cf-email" type="email" placeholder="your@email.com" required style="background:rgba(255,255,255,0.03);border:1px solid var(--border);color:var(--off-white);font-family:var(--font-mono);font-size:0.82rem;padding:0.9rem 1rem;outline:none;transition:border-color 0.2s;cursor:crosshair;" onfocus="this.style.borderColor='var(--silver)'" onblur="this.style.borderColor='rgba(147,149,152,0.18)'"/>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:0.4rem;">
+        <label style="font-size:0.6rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--mid-gray);">Subject</label>
+        <input id="cf-subject" type="text" placeholder="What's on your mind?" style="background:rgba(255,255,255,0.03);border:1px solid var(--border);color:var(--off-white);font-family:var(--font-mono);font-size:0.82rem;padding:0.9rem 1rem;outline:none;transition:border-color 0.2s;cursor:crosshair;" onfocus="this.style.borderColor='var(--silver)'" onblur="this.style.borderColor='rgba(147,149,152,0.18)'"/>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:0.4rem;">
+        <label style="font-size:0.6rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--mid-gray);">Message <span style="color:var(--rust);">*</span></label>
+        <textarea id="cf-message" placeholder="Tell us everything..." required style="background:rgba(255,255,255,0.03);border:1px solid var(--border);color:var(--off-white);font-family:var(--font-mono);font-size:0.82rem;padding:0.9rem 1rem;outline:none;transition:border-color 0.2s;cursor:crosshair;height:130px;resize:vertical;" onfocus="this.style.borderColor='var(--silver)'" onblur="this.style.borderColor='rgba(147,149,152,0.18)'"></textarea>
+      </div>
+      <div style="display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;">
+        <button type="button" onclick="submitContactForm()" style="font-family:var(--font-stencil);font-size:0.82rem;letter-spacing:0.18em;text-transform:uppercase;background:var(--silver);color:var(--black);padding:0.95rem 2rem;border:none;cursor:crosshair;transition:background 0.2s;clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px));" onmouseover="this.style.background='var(--off-white)'" onmouseout="this.style.background='var(--silver)'">Send Message</button>
+        <span id="cf-status" style="font-size:0.72rem;letter-spacing:0.1em;color:var(--mid-gray);display:none;"></span>
+      </div>
+    </form>
   </div>
 </section>
 
@@ -467,6 +470,56 @@
       });
     });
   });
+
+  // Contact form submission
+  function submitContactForm() {
+    const name    = document.getElementById('cf-name').value.trim();
+    const email   = document.getElementById('cf-email').value.trim();
+    const subject = document.getElementById('cf-subject').value.trim();
+    const message = document.getElementById('cf-message').value.trim();
+    const status  = document.getElementById('cf-status');
+
+    if (!name || !email || !message) {
+      status.style.display = 'inline';
+      status.style.color = '#b84c23';
+      status.textContent = 'Please fill in all required fields.';
+      return;
+    }
+
+    status.style.display = 'inline';
+    status.style.color = 'var(--mid-gray)';
+    status.textContent = 'Sending...';
+
+    const data = new URLSearchParams({
+      'form-name': 'contact',
+      name, email,
+      subject: subject || 'General Inquiry',
+      message
+    });
+
+    fetch('https://webhook.poorlymadegoods.com/webhook', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      body: data.toString()
+    })
+    .then(res => {
+      if (res.ok) {
+        status.style.color = 'var(--light-gray)';
+        status.textContent = 'Message sent. We\'ll reply between batches.';
+        document.getElementById('cf-name').value = '';
+        document.getElementById('cf-email').value = '';
+        document.getElementById('cf-subject').value = '';
+        document.getElementById('cf-message').value = '';
+      } else {
+        throw new Error('Server error');
+      }
+    })
+    .catch(() => {
+      status.style.color = '#b84c23';
+      status.textContent = 'Something went wrong. Email us directly at contact@poorlymadegoods.com';
+    });
+  }
+
 </script>
 </body>
 </html>
