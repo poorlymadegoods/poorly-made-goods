@@ -497,7 +497,7 @@
       message
     });
 
-    fetch('https://webhook.poorlymadegoods.com/webhook', {
+    fetch('/webhook', {
       method: 'POST',
       headers: {'Content-Type': 'application/x-www-form-urlencoded'},
       body: data.toString()
