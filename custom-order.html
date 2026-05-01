@@ -393,7 +393,7 @@
 
     <div class="form-divider"></div>
 
-    <form name="custom-order" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onsubmit="handleSubmit(event)">
+    <form name="custom-order" method="POST" onsubmit="handleSubmit(event)">
       <input type="hidden" name="form-name" value="custom-order"/>
       <p style="display:none;"><input name="bot-field"/></p>
       <input type="hidden" name="product"                   id="f-product"/>
@@ -710,7 +710,7 @@
   function handleSubmit(e) {
     e.preventDefault();
     const data = new FormData(e.target);
-    fetch('/', {
+    fetch('/webhook', {
       method: 'POST',
       headers: {'Content-Type': 'application/x-www-form-urlencoded'},
       body: new URLSearchParams(data).toString()
