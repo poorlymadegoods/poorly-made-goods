@@ -286,7 +286,7 @@
       </div>
       <div class="product-info">
         <div class="product-name">V-Fold</div>
-        <div class="product-desc">Full-grain leather. 4 pockets (8 cards), 2 cash pockets &mdash; bills folded in half, perfect for insurance cards and extras.</div>
+        <div class="product-desc">Full-grain leather. 4 pockets (8 cards), 2 cash pockets &mdash; bills folded in half, perfect for credit/debit cards and extras.</div>
         <div class="product-footer">
           <span class="product-price">$125</span>
           <span class="product-tag" style="color:#b84c23;border-color:rgba(184,76,35,0.4);">Sold Out Online</span>
@@ -297,8 +297,25 @@
 
     <!-- STASH -->
     <div class="product-card reveal">
-      <div class="product-image">
-        <img src="/images/symbol-black.svg" alt="Stash Wallet" style="width:60px;height:60px;opacity:0.2;object-fit:contain;"/>
+      <div class="carousel-wrap">
+        <div class="carousel-track" id="stash-track">
+          <img src="/images/stash-tan-front.jpg"      alt="Stash — Front"/>
+          <img src="/images/stash-tan-front-alt.jpg"  alt="Stash — Front Alt"/>
+          <img src="/images/stash-tan-open.jpg"       alt="Stash — Open Interior"/>
+          <img src="/images/stash-tan-medallion.jpg"  alt="Stash — PMG Medallion"/>
+          <img src="/images/stash-tan-cards.jpg"      alt="Stash — With Cards"/>
+          <img src="/images/stash-tan-profile.jpg"    alt="Stash — Profile"/>
+        </div>
+        <button class="carousel-btn prev" onclick="carouselMove('stash',-1)">&#8592;</button>
+        <button class="carousel-btn next" onclick="carouselMove('stash', 1)">&#8594;</button>
+        <div class="carousel-dots" id="stash-dots">
+          <span style="opacity:1;"    onclick="carouselGo('stash',0)"></span>
+          <span style="opacity:0.35;" onclick="carouselGo('stash',1)"></span>
+          <span style="opacity:0.35;" onclick="carouselGo('stash',2)"></span>
+          <span style="opacity:0.35;" onclick="carouselGo('stash',3)"></span>
+          <span style="opacity:0.35;" onclick="carouselGo('stash',4)"></span>
+          <span style="opacity:0.35;" onclick="carouselGo('stash',5)"></span>
+        </div>
         <div class="product-overlay"><button>Sold Out</button></div>
       </div>
       <div class="product-info">
